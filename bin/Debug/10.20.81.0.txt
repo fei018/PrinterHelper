@@ -1,0 +1,5 @@
+#IP , PrinterName , Model , Inf Path
+
+10.20.81.200, Kyocera TASKalfa 5054ci KX (Foreman 200), Kyocera TASKalfa 5054ci KX, C:\CodeRepos\PrinterHelper\bin\Debug\Driver\kyocera 5054ci\OEMSETUP.inf
+10.20.81.201, Kyocera TASKalfa 5054ci KX (Apple 201), Kyocera TASKalfa 5054ci KX, C:\CodeRepos\PrinterHelper\bin\Debug\Driver\kyocera 5054ci\OEMSETUP.inf
+10.20.81.202, RICOH MP C4504ex PCL 6 (BS 202), RICOH MP C4504ex PCL 6, C:\CodeRepos\PrinterHelper\bin\Debug\Driver\C4504\OEMSETUP.inf

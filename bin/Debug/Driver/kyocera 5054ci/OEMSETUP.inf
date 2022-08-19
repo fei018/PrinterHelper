@@ -1,0 +1,514 @@
+;================================================================
+;
+;  OEMSETUP.INF
+;
+;  KYOCERA Document Solutions Printing System Installation Script
+;  Windows Vista x64 and newer (Multi Language excluding Japanese)
+;  Point & Print Version
+;  
+;  (C) 2021 KYOCERA Corporation, KYOCERA Document Solutions Inc.
+;
+;  04/15/2021
+;
+;================================================================
+
+[Version]
+Signature  = "$Windows NT$"
+Class      = Printer
+ClassGUID  = {4D36E979-E325-11CE-BFC1-08002BE10318}
+Provider   = %KMC%
+CatalogFile= KYOMITA.CAT
+DriverVer  = 04/15/2021,8.0.2815.0
+DriverIsolation=2
+
+[ClassInstall]
+AddReg=ClassAddReg
+DelReg=ClassDelReg
+
+[ClassAddReg]
+HKR,,,,%CLASSNAME%
+HKR,,Installer,,MSPRINT.DLL
+HKR,,Icon,,-4
+HKR,,NoDisplayClass,,1
+
+[ClassDelReg]
+HKLM,"System\CurrentControlSet\Services\Class\Printer","NoUseClass"
+
+[Environment]
+UpdateInis=EnvUpdateInis
+AddReg=EnvAddReg
+
+[EnvUpdateInis]
+win.ini,Ports,"LPT1.DOS=",
+win.ini,Ports,"LPT2.DOS=",
+win.ini,Ports,"LPT3.DOS=",
+win.ini,Ports,"LPT1.OS2=",
+win.ini,Ports,"LPT2.OS2=",
+win.ini,Ports,"LPT3.OS2=",
+win.ini,windows,"Spooler=",
+win.ini,windows,"DosPrint=",
+win.ini,windows,"DeviCENotSelectedTimeout=",
+win.ini,windows,"TransmissionRetryTimeout=",
+
+[EnvAddReg]
+;HKLM,"System\CurrentControlSet\Control\Print\Environments\Windows 4.0","Directory",,"CHICAGO"
+;HKLM,"System\CurrentControlSet\Control\Print\Environments\Windows 4.0\Drivers",,,
+;HKLM,"System\CurrentControlSet\Control\Print\Environments\Windows 4.0\Print Processors",,,
+HKLM,"System\CurrentControlSet\Control\Print\Monitors",,,
+HKLM,"System\CurrentControlSet\Control\Print\Printers",,,
+HKLM,"System\CurrentControlSet\Control\Print\Printers","StartOnBoot",1,01,00,00,00
+HKLM,"System\CurrentControlSet\Control\Print\Providers",,,
+
+;----------------------------------------------------------------
+; Manufacturer Section
+;----------------------------------------------------------------
+[Manufacturer]
+Kyocera=Kyocera,NTx86.6.0,NTamd64.6.0
+
+
+;----------------------------------------------------------------
+; Model Sections
+;----------------------------------------------------------------
+
+[Kyocera.NTx86.6.0]
+"Kyocera TASKalfa 7054ci KX"	= TASKalfa_7054ci,WSDPRINT\KyoceraTASKalfa_70544D91,TASKalfa 7054ci
+"Kyocera TASKalfa 7054ci KX"	= TASKalfa_7054ci,USBPRINT\KyoceraTASKalfa_70544D91,TASKalfa 7054ci
+"Kyocera TASKalfa 6054ci KX"	= TASKalfa_6054ci,WSDPRINT\KyoceraTASKalfa_60549C90,TASKalfa 6054ci
+"Kyocera TASKalfa 6054ci KX"	= TASKalfa_6054ci,USBPRINT\KyoceraTASKalfa_60549C90,TASKalfa 6054ci
+"Kyocera TASKalfa 5054ci KX"	= TASKalfa_5054ci,WSDPRINT\KyoceraTASKalfa_5054AF90,TASKalfa 5054ci
+"Kyocera TASKalfa 5054ci KX"	= TASKalfa_5054ci,USBPRINT\KyoceraTASKalfa_5054AF90,TASKalfa 5054ci
+"Kyocera TASKalfa 4054ci KX"	= TASKalfa_4054ci,WSDPRINT\KyoceraTASKalfa_4054BF10,TASKalfa 4054ci
+"Kyocera TASKalfa 4054ci KX"	= TASKalfa_4054ci,USBPRINT\KyoceraTASKalfa_4054BF10,TASKalfa 4054ci
+"Kyocera TASKalfa 3554ci KX"	= TASKalfa_3554ci,WSDPRINT\KyoceraTASKalfa_3554C95C,TASKalfa 3554ci
+"Kyocera TASKalfa 3554ci KX"	= TASKalfa_3554ci,USBPRINT\KyoceraTASKalfa_3554C95C,TASKalfa 3554ci
+"Kyocera TASKalfa 2554ci KX"	= TASKalfa_2554ci,WSDPRINT\KyoceraTASKalfa_2554185D,TASKalfa 2554ci
+"Kyocera TASKalfa 2554ci KX"	= TASKalfa_2554ci,USBPRINT\KyoceraTASKalfa_2554185D,TASKalfa 2554ci
+"Kyocera TASKalfa 7004i KX"	= TASKalfa_7004i,WSDPRINT\KyoceraTASKalfa_70045714,TASKalfa 7004i
+"Kyocera TASKalfa 7004i KX"	= TASKalfa_7004i,USBPRINT\KyoceraTASKalfa_70045714,TASKalfa 7004i
+"Kyocera TASKalfa 6004i KX"	= TASKalfa_6004i,WSDPRINT\KyoceraTASKalfa_60049729,TASKalfa 6004i
+"Kyocera TASKalfa 6004i KX"	= TASKalfa_6004i,USBPRINT\KyoceraTASKalfa_60049729,TASKalfa 6004i
+"Kyocera TASKalfa 5004i KX"	= TASKalfa_5004i,WSDPRINT\KyoceraTASKalfa_5004976D,TASKalfa 5004i
+"Kyocera TASKalfa 5004i KX"	= TASKalfa_5004i,USBPRINT\KyoceraTASKalfa_5004976D,TASKalfa 5004i
+"Kyocera TASKalfa 4004i KX"	= TASKalfa_4004i,WSDPRINT\KyoceraTASKalfa_40045750,TASKalfa 4004i
+"Kyocera TASKalfa 4004i KX"	= TASKalfa_4004i,USBPRINT\KyoceraTASKalfa_40045750,TASKalfa 4004i
+"Kyocera CS 7054ci KX"	= CS_7054ci,WSDPRINT\KyoceraCS_7054ci20F8,CS 7054ci
+"Kyocera CS 7054ci KX"	= CS_7054ci,USBPRINT\KyoceraCS_7054ci20F8,CS 7054ci
+"Kyocera CS 6054ci KX"	= CS_6054ci,WSDPRINT\KyoceraCS_6054ciF1F9,CS 6054ci
+"Kyocera CS 6054ci KX"	= CS_6054ci,USBPRINT\KyoceraCS_6054ciF1F9,CS 6054ci
+"Kyocera CS 5054ci KX"	= CS_5054ci,WSDPRINT\KyoceraCS_5054ciC2F9,CS 5054ci
+"Kyocera CS 5054ci KX"	= CS_5054ci,USBPRINT\KyoceraCS_5054ciC2F9,CS 5054ci
+"Kyocera CS 4054ci KX"	= CS_4054ci,WSDPRINT\KyoceraCS_4054ci13F8,CS 4054ci
+"Kyocera CS 4054ci KX"	= CS_4054ci,USBPRINT\KyoceraCS_4054ci13F8,CS 4054ci
+"Kyocera CS 3554ci KX"	= CS_3554ci,WSDPRINT\KyoceraCS_3554ciA435,CS 3554ci
+"Kyocera CS 3554ci KX"	= CS_3554ci,USBPRINT\KyoceraCS_3554ciA435,CS 3554ci
+"Kyocera CS 2554ci KX"	= CS_2554ci,WSDPRINT\KyoceraCS_2554ci7534,CS 2554ci
+"Kyocera CS 2554ci KX"	= CS_2554ci,USBPRINT\KyoceraCS_2554ci7534,CS 2554ci
+"Kyocera CS 7004i KX"	= CS_7004i,WSDPRINT\KyoceraCS_7004i7E85,CS 7004i
+"Kyocera CS 7004i KX"	= CS_7004i,USBPRINT\KyoceraCS_7004i7E85,CS 7004i
+"Kyocera CS 6004i KX"	= CS_6004i,WSDPRINT\KyoceraCS_6004iBEBA,CS 6004i
+"Kyocera CS 6004i KX"	= CS_6004i,USBPRINT\KyoceraCS_6004iBEBA,CS 6004i
+"Kyocera CS 5004i KX"	= CS_5004i,WSDPRINT\KyoceraCS_5004iBEFE,CS 5004i
+"Kyocera CS 5004i KX"	= CS_5004i,USBPRINT\KyoceraCS_5004iBEFE,CS 5004i
+"Kyocera CS 4004i KX"	= CS_4004i,WSDPRINT\KyoceraCS_4004i7EC3,CS 4004i
+"Kyocera CS 4004i KX"	= CS_4004i,USBPRINT\KyoceraCS_4004i7EC3,CS 4004i
+
+[Kyocera.NTamd64.6.0]
+"Kyocera TASKalfa 7054ci KX"	= TASKalfa_7054ci,WSDPRINT\KyoceraTASKalfa_70544D91,TASKalfa 7054ci
+"Kyocera TASKalfa 7054ci KX"	= TASKalfa_7054ci,USBPRINT\KyoceraTASKalfa_70544D91,TASKalfa 7054ci
+"Kyocera TASKalfa 6054ci KX"	= TASKalfa_6054ci,WSDPRINT\KyoceraTASKalfa_60549C90,TASKalfa 6054ci
+"Kyocera TASKalfa 6054ci KX"	= TASKalfa_6054ci,USBPRINT\KyoceraTASKalfa_60549C90,TASKalfa 6054ci
+"Kyocera TASKalfa 5054ci KX"	= TASKalfa_5054ci,WSDPRINT\KyoceraTASKalfa_5054AF90,TASKalfa 5054ci
+"Kyocera TASKalfa 5054ci KX"	= TASKalfa_5054ci,USBPRINT\KyoceraTASKalfa_5054AF90,TASKalfa 5054ci
+"Kyocera TASKalfa 4054ci KX"	= TASKalfa_4054ci,WSDPRINT\KyoceraTASKalfa_4054BF10,TASKalfa 4054ci
+"Kyocera TASKalfa 4054ci KX"	= TASKalfa_4054ci,USBPRINT\KyoceraTASKalfa_4054BF10,TASKalfa 4054ci
+"Kyocera TASKalfa 3554ci KX"	= TASKalfa_3554ci,WSDPRINT\KyoceraTASKalfa_3554C95C,TASKalfa 3554ci
+"Kyocera TASKalfa 3554ci KX"	= TASKalfa_3554ci,USBPRINT\KyoceraTASKalfa_3554C95C,TASKalfa 3554ci
+"Kyocera TASKalfa 2554ci KX"	= TASKalfa_2554ci,WSDPRINT\KyoceraTASKalfa_2554185D,TASKalfa 2554ci
+"Kyocera TASKalfa 2554ci KX"	= TASKalfa_2554ci,USBPRINT\KyoceraTASKalfa_2554185D,TASKalfa 2554ci
+"Kyocera TASKalfa 7004i KX"	= TASKalfa_7004i,WSDPRINT\KyoceraTASKalfa_70045714,TASKalfa 7004i
+"Kyocera TASKalfa 7004i KX"	= TASKalfa_7004i,USBPRINT\KyoceraTASKalfa_70045714,TASKalfa 7004i
+"Kyocera TASKalfa 6004i KX"	= TASKalfa_6004i,WSDPRINT\KyoceraTASKalfa_60049729,TASKalfa 6004i
+"Kyocera TASKalfa 6004i KX"	= TASKalfa_6004i,USBPRINT\KyoceraTASKalfa_60049729,TASKalfa 6004i
+"Kyocera TASKalfa 5004i KX"	= TASKalfa_5004i,WSDPRINT\KyoceraTASKalfa_5004976D,TASKalfa 5004i
+"Kyocera TASKalfa 5004i KX"	= TASKalfa_5004i,USBPRINT\KyoceraTASKalfa_5004976D,TASKalfa 5004i
+"Kyocera TASKalfa 4004i KX"	= TASKalfa_4004i,WSDPRINT\KyoceraTASKalfa_40045750,TASKalfa 4004i
+"Kyocera TASKalfa 4004i KX"	= TASKalfa_4004i,USBPRINT\KyoceraTASKalfa_40045750,TASKalfa 4004i
+"Kyocera CS 7054ci KX"	= CS_7054ci,WSDPRINT\KyoceraCS_7054ci20F8,CS 7054ci
+"Kyocera CS 7054ci KX"	= CS_7054ci,USBPRINT\KyoceraCS_7054ci20F8,CS 7054ci
+"Kyocera CS 6054ci KX"	= CS_6054ci,WSDPRINT\KyoceraCS_6054ciF1F9,CS 6054ci
+"Kyocera CS 6054ci KX"	= CS_6054ci,USBPRINT\KyoceraCS_6054ciF1F9,CS 6054ci
+"Kyocera CS 5054ci KX"	= CS_5054ci,WSDPRINT\KyoceraCS_5054ciC2F9,CS 5054ci
+"Kyocera CS 5054ci KX"	= CS_5054ci,USBPRINT\KyoceraCS_5054ciC2F9,CS 5054ci
+"Kyocera CS 4054ci KX"	= CS_4054ci,WSDPRINT\KyoceraCS_4054ci13F8,CS 4054ci
+"Kyocera CS 4054ci KX"	= CS_4054ci,USBPRINT\KyoceraCS_4054ci13F8,CS 4054ci
+"Kyocera CS 3554ci KX"	= CS_3554ci,WSDPRINT\KyoceraCS_3554ciA435,CS 3554ci
+"Kyocera CS 3554ci KX"	= CS_3554ci,USBPRINT\KyoceraCS_3554ciA435,CS 3554ci
+"Kyocera CS 2554ci KX"	= CS_2554ci,WSDPRINT\KyoceraCS_2554ci7534,CS 2554ci
+"Kyocera CS 2554ci KX"	= CS_2554ci,USBPRINT\KyoceraCS_2554ci7534,CS 2554ci
+"Kyocera CS 7004i KX"	= CS_7004i,WSDPRINT\KyoceraCS_7004i7E85,CS 7004i
+"Kyocera CS 7004i KX"	= CS_7004i,USBPRINT\KyoceraCS_7004i7E85,CS 7004i
+"Kyocera CS 6004i KX"	= CS_6004i,WSDPRINT\KyoceraCS_6004iBEBA,CS 6004i
+"Kyocera CS 6004i KX"	= CS_6004i,USBPRINT\KyoceraCS_6004iBEBA,CS 6004i
+"Kyocera CS 5004i KX"	= CS_5004i,WSDPRINT\KyoceraCS_5004iBEFE,CS 5004i
+"Kyocera CS 5004i KX"	= CS_5004i,USBPRINT\KyoceraCS_5004iBEFE,CS 5004i
+"Kyocera CS 4004i KX"	= CS_4004i,WSDPRINT\KyoceraCS_4004i7EC3,CS 4004i
+"Kyocera CS 4004i KX"	= CS_4004i,USBPRINT\KyoceraCS_4004i7EC3,CS 4004i
+
+;----------------------------------------------------------------
+; Install Sections
+;----------------------------------------------------------------
+[TASKalfa_7054ci]
+CopyFiles	= @KMK13720.XML,PCXML,WINXP,ALLPDL,KM_AGFA,3D_364,KC_HELP,KXPJLMN_DLL,AUTOCONFIG,KACT2
+DataFile	= KMK13720.XML
+DataSection	= XPCORE
+AddReg		= ND_ADDREG_KCMV3D
+LanguageMonitor	= %KXPJLMN%
+
+[TASKalfa_6054ci]
+CopyFiles	= @KMK13620.XML,PCXML,WINXP,ALLPDL,KM_AGFA,3D_364,KC_HELP,KXPJLMN_DLL,AUTOCONFIG,KACT2
+DataFile	= KMK13620.XML
+DataSection	= XPCORE
+AddReg		= ND_ADDREG_KCMV3D
+LanguageMonitor	= %KXPJLMN%
+
+[TASKalfa_5054ci]
+CopyFiles	= @KMK13520.XML,PCXML,WINXP,ALLPDL,KM_AGFA,3D_365,KC_HELP,KXPJLMN_DLL,AUTOCONFIG,KACT2
+DataFile	= KMK13520.XML
+DataSection	= XPCORE
+AddReg		= ND_ADDREG_KCMV3D
+LanguageMonitor	= %KXPJLMN%
+
+[TASKalfa_4054ci]
+CopyFiles	= @KMK13420.XML,PCXML,WINXP,ALLPDL,KM_AGFA,3D_365,KC_HELP,KXPJLMN_DLL,AUTOCONFIG,KACT2
+DataFile	= KMK13420.XML
+DataSection	= XPCORE
+AddReg		= ND_ADDREG_KCMV3D
+LanguageMonitor	= %KXPJLMN%
+
+[TASKalfa_3554ci]
+CopyFiles	= @KMK13320.XML,PCXML,WINXP,ALLPDL,KM_AGFA,3D_365,KC_HELP,KXPJLMN_DLL,AUTOCONFIG,KACT2
+DataFile	= KMK13320.XML
+DataSection	= XPCORE
+AddReg		= ND_ADDREG_KCMV3D
+LanguageMonitor	= %KXPJLMN%
+
+[TASKalfa_2554ci]
+CopyFiles	= @KMK13220.XML,PCXML,WINXP,ALLPDL,KM_AGFA,3D_365,KC_HELP,KXPJLMN_DLL,AUTOCONFIG,KACT2
+DataFile	= KMK13220.XML
+DataSection	= XPCORE
+AddReg		= ND_ADDREG_KCMV3D
+LanguageMonitor	= %KXPJLMN%
+
+[TASKalfa_7004i]
+CopyFiles	= @KMK14120.XML,PCXML,WINXP,ALLPDL,KM_AGFA,3D_362,KC_HELP,KXPJLMN_DLL,AUTOCONFIG,KACT2
+DataFile	= KMK14120.XML
+DataSection	= XPCORE
+AddReg		= ND_ADDREG_KCMV3D
+LanguageMonitor	= %KXPJLMN%
+
+[TASKalfa_6004i]
+CopyFiles	= @KMK14020.XML,PCXML,WINXP,ALLPDL,KM_AGFA,3D_362,KC_HELP,KXPJLMN_DLL,AUTOCONFIG,KACT2
+DataFile	= KMK14020.XML
+DataSection	= XPCORE
+AddReg		= ND_ADDREG_KCMV3D
+LanguageMonitor	= %KXPJLMN%
+
+[TASKalfa_5004i]
+CopyFiles	= @KMK13920.XML,PCXML,WINXP,ALLPDL,KM_AGFA,3D_363,KC_HELP,KXPJLMN_DLL,AUTOCONFIG,KACT2
+DataFile	= KMK13920.XML
+DataSection	= XPCORE
+AddReg		= ND_ADDREG_KCMV3D
+LanguageMonitor	= %KXPJLMN%
+
+[TASKalfa_4004i]
+CopyFiles	= @KMK13820.XML,PCXML,WINXP,ALLPDL,KM_AGFA,3D_363,KC_HELP,KXPJLMN_DLL,AUTOCONFIG,KACT2
+DataFile	= KMK13820.XML
+DataSection	= XPCORE
+AddReg		= ND_ADDREG_KCMV3D
+LanguageMonitor	= %KXPJLMN%
+
+[CS_7054ci]
+CopyFiles	= @KMK13720.XML,PCXML,WINXP,ALLPDL,KM_AGFA,3D_364,KC_HELP,KXPJLMN_DLL,AUTOCONFIG,KACT2
+DataFile	= KMK13720.XML
+DataSection	= XPCORE
+AddReg		= ND_ADDREG_KCMV3D
+LanguageMonitor	= %KXPJLMN%
+
+[CS_6054ci]
+CopyFiles	= @KMK13620.XML,PCXML,WINXP,ALLPDL,KM_AGFA,3D_364,KC_HELP,KXPJLMN_DLL,AUTOCONFIG,KACT2
+DataFile	= KMK13620.XML
+DataSection	= XPCORE
+AddReg		= ND_ADDREG_KCMV3D
+LanguageMonitor	= %KXPJLMN%
+
+[CS_5054ci]
+CopyFiles	= @KMK13520.XML,PCXML,WINXP,ALLPDL,KM_AGFA,3D_365,KC_HELP,KXPJLMN_DLL,AUTOCONFIG,KACT2
+DataFile	= KMK13520.XML
+DataSection	= XPCORE
+AddReg		= ND_ADDREG_KCMV3D
+LanguageMonitor	= %KXPJLMN%
+
+[CS_4054ci]
+CopyFiles	= @KMK13420.XML,PCXML,WINXP,ALLPDL,KM_AGFA,3D_365,KC_HELP,KXPJLMN_DLL,AUTOCONFIG,KACT2
+DataFile	= KMK13420.XML
+DataSection	= XPCORE
+AddReg		= ND_ADDREG_KCMV3D
+LanguageMonitor	= %KXPJLMN%
+
+[CS_3554ci]
+CopyFiles	= @KMK13320.XML,PCXML,WINXP,ALLPDL,KM_AGFA,3D_365,KC_HELP,KXPJLMN_DLL,AUTOCONFIG,KACT2
+DataFile	= KMK13320.XML
+DataSection	= XPCORE
+AddReg		= ND_ADDREG_KCMV3D
+LanguageMonitor	= %KXPJLMN%
+
+[CS_2554ci]
+CopyFiles	= @KMK13220.XML,PCXML,WINXP,ALLPDL,KM_AGFA,3D_365,KC_HELP,KXPJLMN_DLL,AUTOCONFIG,KACT2
+DataFile	= KMK13220.XML
+DataSection	= XPCORE
+AddReg		= ND_ADDREG_KCMV3D
+LanguageMonitor	= %KXPJLMN%
+
+[CS_7004i]
+CopyFiles	= @KMK14120.XML,PCXML,WINXP,ALLPDL,KM_AGFA,3D_362,KC_HELP,KXPJLMN_DLL,AUTOCONFIG,KACT2
+DataFile	= KMK14120.XML
+DataSection	= XPCORE
+AddReg		= ND_ADDREG_KCMV3D
+LanguageMonitor	= %KXPJLMN%
+
+[CS_6004i]
+CopyFiles	= @KMK14020.XML,PCXML,WINXP,ALLPDL,KM_AGFA,3D_362,KC_HELP,KXPJLMN_DLL,AUTOCONFIG,KACT2
+DataFile	= KMK14020.XML
+DataSection	= XPCORE
+AddReg		= ND_ADDREG_KCMV3D
+LanguageMonitor	= %KXPJLMN%
+
+[CS_5004i]
+CopyFiles	= @KMK13920.XML,PCXML,WINXP,ALLPDL,KM_AGFA,3D_363,KC_HELP,KXPJLMN_DLL,AUTOCONFIG,KACT2
+DataFile	= KMK13920.XML
+DataSection	= XPCORE
+AddReg		= ND_ADDREG_KCMV3D
+LanguageMonitor	= %KXPJLMN%
+
+[CS_4004i]
+CopyFiles	= @KMK13820.XML,PCXML,WINXP,ALLPDL,KM_AGFA,3D_363,KC_HELP,KXPJLMN_DLL,AUTOCONFIG,KACT2
+DataFile	= KMK13820.XML
+DataSection	= XPCORE
+AddReg		= ND_ADDREG_KCMV3D
+LanguageMonitor	= %KXPJLMN%
+
+;----------------------------------------------------------------
+; Copy Sections
+;----------------------------------------------------------------
+
+; This should be used for NT User Mode Driver
+
+[WINXP]
+KMUC80SF.DLL
+KMUU80SF.DLL
+KMFS80SF.DLL
+KMRF80SF.DLL
+KMRC80SF.DLL
+KMCR80SF.DLL
+KM3D80SF.DLL
+KM3M80SF.DLL
+KMPE80SF.DLL
+KMWM80SF.DLL
+KMPF80SF.DLL
+KMPO80SF.DLL
+KMSP80SF.DLL
+KMCO80SF.DLL
+KMPC80SF.DLL
+KMPLSW02.DLL
+KMPLSWIP.DLL
+KMPLID01.DLL
+KMIEDIT.DLL
+KCMV3D.INI
+CONFIDENTIAL.MIE
+NOCOPY.MIE
+KMPRPVW.EXE
+KMPOPUPMGR.EXE
+PMCLIENT2.DLL
+PMCLIENT3.DLL
+;KMDISCOVER2.DLL
+KMDISCOVER.DLL
+KDSInst.exe
+
+[ALLPDL]
+KMXL80SF.DLL
+KM5E80SF.DLL
+KM5C80SF.DLL
+KMPS80SF.DLL
+KMPD80SF.DLL
+
+[PCL5E]
+KM5E80SF.DLL
+
+[KM_AGFA]
+KMAGFA1.FDF
+KMPRE2.FDF
+
+[3D_364]
+KDS336410.DAT
+
+[3D_365]
+KDS336510.DAT
+
+[3D_362]
+KDS336210.DAT
+
+[3D_363]
+KDS336310.DAT
+
+[KC_HELP]
+KMGKEN55.chm
+
+[KXPJLMN_DLL]
+KXPLM64.DLL
+
+[PCXML]
+KMBASE2.XML
+
+[AUTOCONFIG]
+kmautoc13.INI
+kmquery13.XML
+
+[KACT2]
+KACT2.EXE
+
+
+;----------------------------------------------------------------
+; Data Sections
+;
+; These sections contain data that is shared between devices.
+;
+;----------------------------------------------------------------
+;
+[XPCORE]
+DriverFile=KMUC80SF.DLL
+ConfigFile=KMUU80SF.DLL
+HelpFile=KMGKEN55.chm
+
+[XPCORE_NOPOST]
+DriverFile=KMUC80SF.DLL
+ConfigFile=KMUU80SF.DLL
+HelpFile=KMGKEN55.chm
+
+;[ENABLE3D]
+;HKLM,"SOFTWARE\Kyocera Mita\Shared Files","Install Path",0,"%11%\spool\drivers\w32x86\2"
+
+[ND_ADDREG_KCMV3D]
+HKLM,"SOFTWARE\Kyocera Mita\Shared Files","Install Path",0,"%11%\spool\drivers\w32x86\2"
+
+;
+; Call SetupSetDirectoryId with 66000 to set the target directory at runtime
+; (depending on which environment drivers are getting installed)
+;
+
+[PrinterPackageInstallation.x86]
+PackageAware=TRUE
+
+[PrinterPackageInstallation.amd64]
+PackageAware=TRUE
+
+;----------------------------------------------------------------
+; Destination Information
+;----------------------------------------------------------------
+[DestinationDirs]
+DefaultDestDir=66000
+POSTINSTALL=11
+KMPMKNT_DLL=11
+KMPJLMN_DLL=11
+
+
+;----------------------------------------------------------------
+; Source Information
+;----------------------------------------------------------------
+;
+[SourceDisksNames.x86]
+1 = %CDROM%,,,""
+
+[SourceDisksNames.amd64]
+1 = %CDROM%,,,""
+
+[SourceDisksFiles]
+KMUC80SF.DLL  = 1
+KMUU80SF.DLL    = 1
+KMFS80SF.DLL  = 1
+KMRF80SF.DLL  = 1
+KMRC80SF.DLL     = 1
+KMCR80SF.DLL     = 1
+KMXL80SF.DLL   = 1
+KM5E80SF.DLL   = 1
+KM5C80SF.DLL   = 1
+KMPS80SF.DLL   = 1
+KMPD80SF.DLL    = 1
+KMSP80SF.DLL	= 1
+KMPE80SF.DLL	= 1
+KMWM80SF.DLL		= 1
+KMPF80SF.DLL	= 1
+KMPO80SF.DLL	= 1
+KM3D80SF.DLL		= 1
+KM3M80SF.DLL		= 1
+KMCO80SF.DLL	= 1
+KMPLSW02.DLL	= 1
+KMPLSWIP.DLL	= 1
+KMPLID01.DLL	= 1
+KMIEDIT.DLL	= 1
+KMAGFA1.FDF  	= 1
+KMPRE2.FDF		= 1
+KMPRPVW.EXE	= 1
+KMPC80SF.DLL = 1
+PMCLIENT2.DLL	= 1
+PMCLIENT3.DLL	= 1
+
+KMK13720.XML	= 1
+KMK13620.XML	= 1
+KMK13520.XML	= 1
+KMK13420.XML	= 1
+KMK13320.XML	= 1
+KMK13220.XML	= 1
+KMK14120.XML	= 1
+KMK14020.XML	= 1
+KMK13920.XML	= 1
+KMK13820.XML	= 1
+
+KDS336410.DAT	= 1
+KDS336510.DAT	= 1
+KDS336210.DAT	= 1
+KDS336310.DAT	= 1
+
+KXPLM64.DLL		= 1
+KMBASE2.XML	= 1
+KMGKEN55.chm	= 1
+KMFLEN27.chm	= 1
+KCMV3D.INI		= 1
+kmautoc13.INI	= 1
+kmquery13.XML	= 1
+KACT2.EXE	= 1
+; Status Monitor
+;KMSTMNW.EXE	= 1
+;KMSTMVM.EXE	= 1
+;KMSTMNET.EXE	= 1
+;KMSTMNWS.INI	= 1
+;KMSTMNET.INI	= 1
+;KcMV3Da.DLL	= 1
+KMPOPUPMGR.EXE	= 1
+NOCOPY.MIE	= 1
+CONFIDENTIAL.MIE	= 1
+
+;UPD
+;KMDISCOVER2.DLL  = 1
+KMDISCOVER.DLL	= 1
+
+; UNIXML
+KDSInst.exe = 1
+;----------------------------------------------------------------
+; Localizable Strings
+;----------------------------------------------------------------
+[Strings]
+KXPJLMN	= "KX Language Monitor,KXPLM64.DLL"
+KMPMKNT   	= "KM USB Port,KM-PMKN.DLL"
+CDROM		= "Kyocera"
+CLASSNAME = "Printers"
+KMC	= "KYOCERA Document Solutions Inc."

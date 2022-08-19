@@ -1,0 +1,14 @@
+C:\CodeRepos\PrinterHelper\bin\Debug\PrinterHelper.exe.config
+C:\CodeRepos\PrinterHelper\bin\Debug\PrinterHelper.exe
+C:\CodeRepos\PrinterHelper\bin\Debug\PrinterHelper.pdb
+C:\CodeRepos\PrinterHelper\obj\Debug\MainWindow.g.cs
+C:\CodeRepos\PrinterHelper\obj\Debug\App.g.cs
+C:\CodeRepos\PrinterHelper\obj\Debug\PrinterHelper_MarkupCompile.cache
+C:\CodeRepos\PrinterHelper\obj\Debug\PrinterHelper_MarkupCompile.lref
+C:\CodeRepos\PrinterHelper\obj\Debug\MainWindow.baml
+C:\CodeRepos\PrinterHelper\obj\Debug\PrinterHelper.g.resources
+C:\CodeRepos\PrinterHelper\obj\Debug\PrinterHelper.Properties.Resources.resources
+C:\CodeRepos\PrinterHelper\obj\Debug\PrinterHelper.csproj.GenerateResource.cache
+C:\CodeRepos\PrinterHelper\obj\Debug\PrinterHelper.csproj.CoreCompileInputs.cache
+C:\CodeRepos\PrinterHelper\obj\Debug\PrinterHelper.exe
+C:\CodeRepos\PrinterHelper\obj\Debug\PrinterHelper.pdb

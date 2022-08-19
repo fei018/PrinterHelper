@@ -1,0 +1,168 @@
+{
+
+	"common" :
+	{
+
+		"root" :
+		{
+                        "SoftwareID"				: [ "0000000700001009",		"REG_SZ" ],
+			"Logging"								: [ "1",					"REG_DWORD" ]
+		},
+
+		"common_scope" :
+		{
+			"DriverProductVersion"		: [ "1.2.0.0",		"REG_SZ" ],
+			"Date"				: [ "08/28/2017",	"REG_SZ" ],
+			"PrinterModelName"		: [ "MP C4504ex",	"REG_SZ" ],
+			"PDL"						: [ "PCLXL",				"REG_SZ" ]
+		},
+
+		"ui_scope" :
+		{
+		},
+
+		"gr_scope" :
+		{
+		},
+
+		"capsdb_scope" :
+		{
+		}
+
+	},
+
+       "Gestetner MP C4504ex PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C4504ex", "REG_SZ" ]
+               }
+       },
+       "Gestetner DSc1245ex PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "DSc1245ex", "REG_SZ" ]
+               }
+       },
+       "Gestetner MP C6004ex PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C6004ex", "REG_SZ" ]
+               }
+       },
+       "Gestetner DSc1260ex PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "DSc1260ex", "REG_SZ" ]
+               }
+       },
+"infotec MP C4504ex PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C4504ex", "REG_SZ" ]
+               }
+       },
+       "infotec MP C5504ex PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C5504ex", "REG_SZ" ]
+               }
+       },
+       "infotec MP C6004ex PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C6004ex", "REG_SZ" ]
+               }
+       },
+"LANIER MP C4504ex PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C4504ex", "REG_SZ" ]
+               }
+       },
+       "LANIER MP C5504ex PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C5504ex", "REG_SZ" ]
+               }
+       },
+       "LANIER MP C6004ex PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C6004ex", "REG_SZ" ]
+               }
+       },
+"NRG MP C4504ex PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C4504ex", "REG_SZ" ]
+               }
+       },
+       "NRG MP C5504ex PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C5504ex", "REG_SZ" ]
+               }
+       },
+       "NRG MP C6004ex PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C6004ex", "REG_SZ" ]
+               }
+       },
+"RICOH MP C4504ex PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C4504ex", "REG_SZ" ]
+               }
+       },
+       "RICOH MP C5504ex PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C5504ex", "REG_SZ" ]
+               }
+       },
+       "RICOH MP C6004ex PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C6004ex", "REG_SZ" ]
+               }
+       },
+"SAVIN MP C4504ex PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C4504ex", "REG_SZ" ]
+               }
+       },
+       "SAVIN MP C5504ex PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C5504ex", "REG_SZ" ]
+               }
+       },
+       "SAVIN MP C6004ex PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C6004ex", "REG_SZ" ]
+               }
+       }
+ 
+}

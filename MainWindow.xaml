@@ -1,0 +1,109 @@
+﻿<Window x:Class="PrinterHelper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PrinterHelper"
+        mc:Ignorable="d"
+        Title="Printer Helper 1.0" Height="600" Width="800" 
+        WindowStartupLocation="CenterScreen" Icon="printer.ico" ResizeMode="CanResize"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <!-- First Row -->
+        <Border Grid.Row="0" BorderBrush="Gray" BorderThickness="1" Margin="1">
+            <DockPanel>
+                <ToolBarTray DockPanel.Dock="Top">
+                    <ToolBar Height="40">
+                        <Button Name="btn_AddSitePrinters"
+                        Content="Add Site Printers"
+                        Click="btn_AddSitePrinters_Click">
+                        </Button>
+                        <Separator/>
+                        <Button Name="btn_DeleteOldPrinters"
+                        Content="Delete Old Printers"
+                        Click="btn_DeleteOldPrinters_Click">
+                        </Button>
+                    </ToolBar>
+                </ToolBarTray>
+            </DockPanel>
+        </Border>
+
+        <!-- Second Row -->
+        <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="1" Margin="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" Margin="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Local Printer List" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+
+                    <ListView Grid.Row="1" Name="lv_LocalPrinterList" >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Printer Name" DisplayMemberBinding="{Binding Name}"/>
+                                <GridViewColumn Header="IP" DisplayMemberBinding="{Binding TcpIPPort.HostAddress}"/>
+                            </GridView>
+                        </ListView.View>
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Name="lv_LocalPrinterList_cm_Preferences" Header="Preferences" Click="lv_LocalPrinterList_cm_Preferences_Click"/>
+                                <MenuItem Name="lv_LocalPrinterList_cm_SetDefault" Header="Set default" Click="lv_LocalPrinterList_cm_SetDefault_Click"/>
+                                <MenuItem Name="lv_LocalPrinterList_cm_Delete" Header="Delete" Click="lv_LocalPrinterList_cm_Delete_Click"/>
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                    </ListView>
+                </Grid>
+
+                <Grid Grid.Column="1" Margin="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Site Printer List" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+
+                    <ListView Grid.Row="1" Name="lv_SitePrinterList" >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Printer Name" DisplayMemberBinding="{Binding PrinterName}"/>
+                                <GridViewColumn Header="IP" DisplayMemberBinding="{Binding IP}"/>
+                            </GridView>
+                        </ListView.View>
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Name="lv_SitePrinterList_cm_Add" Header="Add Printer" Click="lv_SitePrinterList_cm_Add_Click"/>
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                    </ListView>
+                </Grid>
+            </Grid>
+        </Border>
+
+        <!-- Third Row -->
+        <Border Grid.Row="2" BorderBrush="Gray" BorderThickness="1" Margin="1">
+            <TextBox Name="txt_Status" TextWrapping="Wrap" IsReadOnly="True" 
+                         VerticalScrollBarVisibility="Auto" TextChanged="txt_Status_TextChanged">
+            </TextBox>
+        </Border>
+
+        <!-- Fourthly Row -->
+        <Border Grid.Row="3" BorderBrush="Gray" BorderThickness="1" Margin="1">
+            <ProgressBar Name="progressBar1"  IsIndeterminate="True" Visibility="Hidden">
+            </ProgressBar>
+        </Border>
+    </Grid>
+</Window>

@@ -78,7 +78,7 @@ namespace PrinterHelper
                     }
 
                     // add port
-                    AddOrUpdatePrinterIPPort(info.IP);
+                    AddOrUpdatePrinterTcpIPPort(info.IP);
 
                     // install driver
                     if (!PrinterDriverExist(info.PrinterModel))
@@ -114,7 +114,7 @@ namespace PrinterHelper
                 }
 
                 // add port
-                AddOrUpdatePrinterIPPort(info.IP);
+                AddOrUpdatePrinterTcpIPPort(info.IP);
 
                 // install driver
                 if (!PrinterDriverExist(info.PrinterModel))
@@ -123,7 +123,7 @@ namespace PrinterHelper
                 }
 
                 // install printer
-                InstallPrinter_PS(info.PrinterName, info.PrinterModel, info.IP);
+                InstallPrinter_WMI(info.PrinterName, info.PrinterModel, info.IP);
 
                 // set config
                 SetPrinterConfig_WMI(info.PrinterName);
@@ -202,6 +202,37 @@ namespace PrinterHelper
         {
             try
             {
+                using (ManagementClass printClass = new ManagementClass(@"\root\cimv2:Win32_Printer"))
+                using (ManagementObject printObject = printClass.CreateInstance())
+                {
+                    printObject["Name"] = printerName;
+                    printObject["DriverName"] = driverName;
+                    printObject["PortName"] = portName;
+                    printObject["DoCompleteFirst"] = true;
+
+                    PutOptions options = new PutOptions(null, TimeSpan.FromSeconds(30), false, PutType.CreateOnly);
+                    printObject.Put(options);
+
+                    printObject.Dispose();
+                }
+
+                if (!PrinterExist(printerName))
+                {
+                    throw new Exception("Install Printer Fail: " + printerName + "\r\n");
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        #endregion
+
+        #region + private static void InstallPrinter_WMI2(string printerName, string driverName, string portName)
+        private static void InstallPrinter_WMI2(string printerName, string driverName, string portName)
+        {
+            try
+            {
                 using (ManagementClass mc = new ManagementClass(@"\root\StandardCimv2:MSFT_Printer"))
                 using (ManagementObject printerObj = mc.CreateInstance())
                 {
@@ -219,20 +250,9 @@ namespace PrinterHelper
 
                 // check add succeed
 
-                ManagementScope mgmtscope = new ManagementScope(@"\root\StandardCimv2");
-                var query = new ObjectQuery($"Select * from MSFT_Printer Where Name = '{printerName}'");
-
-                using (var objsearcher = new ManagementObjectSearcher(mgmtscope, query))
-                using (var printers = objsearcher.Get())
+                if (!PrinterExist(printerName))
                 {
-                    var success = printers.Count >= 1;
-
-                    printers.Dispose();
-
-                    if (!success)
-                    {
-                        throw new Exception("Install Printer Fail: " + printerName + "\r\n");
-                    }
+                    throw new Exception("Install Printer Fail: " + printerName + "\r\n");
                 }
             }
             catch (Exception)
@@ -289,8 +309,8 @@ namespace PrinterHelper
         }
         #endregion
 
-        #region + private static void AddOrUpdatePrinterIPPort(string ipAddress)
-        private static void AddOrUpdatePrinterIPPort(string ipAddress)
+        #region + private static void AddOrUpdatePrinterTcpIPPort(string ipAddress)
+        private static void AddOrUpdatePrinterTcpIPPort(string ipAddress)
         {
             try
             {
@@ -469,7 +489,7 @@ namespace PrinterHelper
                 {
                     methodParams.SetPropertyValue("PrinterName", printerName);
                     methodParams.SetPropertyValue("Color", false);
-                    methodParams.SetPropertyValue("DuplexingMode", 0);
+                    methodParams.SetPropertyValue("DuplexingMode", 0);                   
 
                     //var invokeOption = new InvokeMethodOptions(null, TimeSpan.FromSeconds(30));
                     mc.InvokeMethod("SetByPrinterName", methodParams, null);

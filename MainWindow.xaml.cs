@@ -199,6 +199,18 @@ namespace PrinterHelper
             printer?.SetDefaultPrinter();
         }
 
+        private void lv_LocalPrinterList_cm_Properties_Click(object sender, RoutedEventArgs e)
+        {
+            var printer = lv_LocalPrinterList.SelectedItem as PrinterInfo;
+            printer?.CallPropertiesGUI();
+        }
+
+        private void lv_LocalPrinterList_cm_ShowPrintJob_Click(object sender, RoutedEventArgs e)
+        {
+            var printer = lv_LocalPrinterList.SelectedItem as PrinterInfo;
+            printer?.CallShowPrintJobGUI();
+        }
+
         private void lv_LocalPrinterList_cm_Delete_Click(object sender, RoutedEventArgs e)
         {
             try

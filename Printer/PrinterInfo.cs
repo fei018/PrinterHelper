@@ -92,6 +92,20 @@ namespace PrinterHelper
         }
         #endregion
 
+        #region public void CallPropertiesGUI()
+        public void CallPropertiesGUI()
+        {
+            Process.Start(_printui, $"/n \"{Name}\" /p");
+        }
+        #endregion
+
+        #region public void CallShowPrintJobGUI()
+        public void CallShowPrintJobGUI()
+        {
+            Process.Start(_printui, $"/n \"{Name}\" /o");
+        }
+        #endregion
+
         // static
 
         #region + public static List<PrinterInfo> GetAllPrinterList()

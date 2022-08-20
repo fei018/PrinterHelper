@@ -19,7 +19,7 @@ namespace PrinterHelper
 
         // function
 
-        #region MyRegion
+        #region public static bool ConfigFileExists(out string configPath)
         public static bool ConfigFileExists(out string configPath)
         {
             var ip = UtilityTools.ComputeNetworkAddress(UtilityTools.GetLocalIPv4(), UtilityTools.GetLocalIPv4Mask());

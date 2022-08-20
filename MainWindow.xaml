@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrinterHelper"
         mc:Ignorable="d"
-        Title="Printer Helper 1.0" Height="600" Width="800" 
+        Title="Printer Helper 1.0" Height="600" Width="900" 
         WindowStartupLocation="CenterScreen" Icon="printer.ico" ResizeMode="CanResize"
         >
     <Grid>
@@ -39,7 +39,7 @@
         <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="1" Margin="1">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
+                    <ColumnDefinition Width="1.2*"/>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
@@ -62,6 +62,8 @@
                             <ContextMenu>
                                 <MenuItem Name="lv_LocalPrinterList_cm_Preferences" Header="Preferences" Click="lv_LocalPrinterList_cm_Preferences_Click"/>
                                 <MenuItem Name="lv_LocalPrinterList_cm_SetDefault" Header="Set default" Click="lv_LocalPrinterList_cm_SetDefault_Click"/>
+                                <MenuItem Name="lv_LocalPrinterList_cm_Properties" Header="Properties" Click="lv_LocalPrinterList_cm_Properties_Click" />
+                                <MenuItem Name="lv_LocalPrinterList_cm_ShowPrintJob" Header="Show Print Job" Click="lv_LocalPrinterList_cm_ShowPrintJob_Click" />
                                 <MenuItem Name="lv_LocalPrinterList_cm_Delete" Header="Delete" Click="lv_LocalPrinterList_cm_Delete_Click"/>
                             </ContextMenu>
                         </ListView.ContextMenu>

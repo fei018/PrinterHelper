@@ -14,7 +14,7 @@ namespace PrinterHelper
         public string PortNumber { get; set; }
 
         #region + public void Delete()
-        public void Delete()
+        public void Delete2()
         {
             try
             {
@@ -40,7 +40,7 @@ namespace PrinterHelper
         #endregion
 
         #region MyRegion
-        public void Delete_PS()
+        public void Delete()
         {
             try
             {

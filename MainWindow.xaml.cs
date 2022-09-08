@@ -36,8 +36,9 @@ namespace PrinterHelper
         //---- function
 
         #region private void lv_LocalPrinterList_Refresh()
-        private void lv_LocalPrinterList_Refresh()
+        private async void lv_LocalPrinterList_Refresh()
         {
+            await Task.Delay(1000);
             lv_LocalPrinterList.ItemsSource = PrinterInfo.GetAllPrinterList();
         }
         #endregion
@@ -119,7 +120,9 @@ namespace PrinterHelper
                 return;
             }
 
-            var result = MessageBox.Show(this,"Confirm ?", "Add Site Printers", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            var result = MessageBox.Show(this, "Add site all printers ?", "Add Site Printers",
+                                         MessageBoxButton.YesNo, MessageBoxImage.Question);
+
             if (result == MessageBoxResult.Yes)
             {
                 try
@@ -150,7 +153,8 @@ namespace PrinterHelper
         #region btn_DeleteOldPrinters_Click(object sender, RoutedEventArgs e)
         private async void btn_DeleteOldPrinters_Click(object sender, RoutedEventArgs e)
         {
-            var result = MessageBox.Show("Confirm ?", "Delete Old Printers", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            var result = MessageBox.Show("Delete old ip printers ?", "Delete Old Printers",
+                                         MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes)
             {
                 try
@@ -217,14 +221,14 @@ namespace PrinterHelper
             {
                 var printer = lv_LocalPrinterList.SelectedItem as PrinterInfo;
                 printer?.Delete();
-                printer.TcpIPPort.Delete();
+                printer?.TcpIPPort?.Delete();
             }
             catch (Exception ex)
             {
                 TextboxStatus_AppendLine(ex.Message);
             }
             finally
-            {
+            {               
                 lv_LocalPrinterList_Refresh();
             }
         }

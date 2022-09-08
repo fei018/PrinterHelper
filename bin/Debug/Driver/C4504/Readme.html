@@ -145,6 +145,8 @@ If any provision or portion of this Agreement shall be found to be illegal, inva
 <li>Windows 8 Pro and Enterprise
 <li>Windows 8.1 Pro and Enterprise
 <li>Windows 10 Home/Pro/Enterprise/Education
+<li>Windows Server 2003 Standard and Enterprise Editions
+<li>Windows Server 2003 R2 Standard and Enterprise Editions
 <li>Windows Server 2008 Standard and Enterprise
 </ul>
 <h2>64-bit architecture</h2>
@@ -154,11 +156,14 @@ If any provision or portion of this Agreement shall be found to be illegal, inva
 <li>Windows 8 Pro and Enterprise
 <li>Windows 8.1 Pro and Enterprise
 <li>Windows 10 Home/Pro/Enterprise/Education
+<li>Windows Server 2003 Standard and Enterprise Editions
+<li>Windows Server 2003 R2 Standard and Enterprise Editions
 <li>Windows Server 2008 Standard and Enterprise
 <li>Windows Server 2008 R2 Standard and Enterprise 
 <li>Windows Server 2012 Foundation, Essentials, and Standard
 <li>Windows Server 2012 R2 Foundation, Essentials, and Standard
 </ul>
+Note: Hyper-V virtual machine environments are not supported.
 </p>
 
 
@@ -174,7 +179,7 @@ This procedure requires administrator privileges (an administrator account or th
 </p>
 <h3>1-1) Windows 10</h3>
 
-<p><ol>
+<ol>
 <li>From the Start button, go to the following to initialize the "Add Printer" settings: "Settings" > "Devices" > "Printers & scanners" > "Add printers & scanners" or select "All Apps" > "Windows System" > "Control Panel" > "View devices and printers" > "Add a printer".
 <li>From "Select a printer", select "The printer that I want isn't listed".
 <li>Select the connection method in "Find a printer by other options" according to the printer setup wizard. The following is the procedure when "Add a local printer or network printer with manual settings" is selected.
@@ -193,7 +198,6 @@ Below is the procedure when "Add a local printer or network printer with manual 
 <li>Check if the printer is working properly by clicking "Print a test page" in the "You've successfully added [Printer name]" dialog. 
 <li>Click "Finish" to complete the driver installation.
 </ol>
-</p>
 <h3>1-2) Windows 8/8.1 and Windows Server 2012/Server 2012 R2</h3>
 
 <p><ol>
@@ -240,7 +244,29 @@ Below is the procedure when "Add a local printer" is selected.
 <li>You can check if the printer is working properly by clicking "Print a test page" in the "You've successfully added [Printer name]" dialog.
 <li>Click "Finish" to complete the driver installation.
 </ol>
+<h3>1- 4) Windows Server 2003</h3>
+</p>
 
+<p><ol>
+<li>Initialize the "Add Printer" dialog by navigating to the following from the Start Menu: "Printers and Faxes" > "Add a Printer". 
+<li>Select the connection method in the "Local or Network Printer" dialog.
+<br><br>
+Below is the procedure when "Local printer attached to this computer" is selected. 
+<br>
+Note: Uncheck "Automatically detect and install my Plug and Play printer".
+<br><br>
+<li>Select a printer port in the "Select a Printer Port" dialog. 
+<ol>
+<li>If an existing port will be used, select it from the "Use the following port:" dropdown list.
+<li>If a new port will be used, select "Standard TCP/IP Port" from the "Create a new port:" dropdown list. Enter the device IP address in "Add Standard TCP/IP Printer Port Wizard".
+</ol>
+<li>Specify the driver file the .inf file under the disk1 directory of the downloaded driver folder or included in the CD-ROM-by clicking "Have Disk".
+<li>Select the appropriate manufacturer and printer in the "Install Printer Software" dialog.
+<li>Enter a printer name and select "Yes" or "No" for setting this printer as the default printer in the "Name Your Printer" dialog.
+<li>Select "Yes" or "No" for printing a test page in the "Print Test Page" dialog.
+<li>Click "Finish" to complete driver installation.
+</ol>
+</p>
 <hr class=semiwidth>
 <h2><a name="UpdateInstall_en">2) Upgrading the printer driver</a></h2>
 
@@ -265,7 +291,7 @@ After completing above operation, you can use printer driver of new version.
 <p><hr class=semiwidth>
 <h2><a name="Uninstall_en">3) Uninstalling the printer driver </a></h2>
 </p>
-<strong>Note:</strong> This procedure requires administrator privileges (an administrator account or the ability to "Run as Administrator" in the Windows operating system).
+<strong>Note:</strong> This procedure requires administrator privileges (admin account or "Run as Administrator").
 
 <p><h3>3-1) Windows 7/8/8.1/10/Server 2008 R2/Server 2012/Server 2012 R2</h3>
 </p>
@@ -293,7 +319,17 @@ After completing above operation, you can use printer driver of new version.
 <li>Restart the PC.
 </ol>
 
-
+<p><h3>3-3) Windows Server 2003</h3>
+<ol>
+<li>Close all applications.
+<li>Open the "Printers" folder (or "Printers and Faxes").
+<li>Delete the printer icon corresponding to the driver that is to be uninstalled.
+<li>File > Server Properties > Driver tab.
+<li>Select the driver to be uninstalled.
+<li>Press the Remove key.
+<li>Restart the PC.
+</ol>
+</p>
 
 
 
@@ -324,17 +360,17 @@ The example of specific application : Microsoft Office
 <br>
 &nbsp;&nbsp;Workaround:<br>
 &nbsp;&nbsp;Use Vector Mode in the PCL driver.
-<li>If the registry and configuration files that are generated during driver installation are edited or deleted, the behavior of the driver is not guaranteed.
 </ul>
 <h2><a name="">[OS/Windows Related Issues]</a></h2>
 <ul>
 <li>The driver's "Web Image Monitor" button might not work in an IPv6 environment. 
+</p>
 </ul>
 <h2><a name="">[Driver Setting Related Issues]</a></h2>
 <ul>
 <li>The number of copies setting of the printer driver might not work as expected when printing the following applications:<br>
-</p>
-<ul>
+
+<p><ul>
 <li>Adobe Reader
 <li>Adobe Acrobat
 <li>Adobe Illustrator
@@ -345,7 +381,7 @@ The example of specific application : Microsoft Office
 &nbsp;&nbsp;Set the number of copies in application.
 <li>The use of Reverse Order is not supported with the Duplex, Front Cover, Back Cover, Chapter Pages, Slip Sheet functions.
 <li>If the Staple setting is "2 at Center" or if the "Reverse Order" setting is On, the driver will add an extra page to the end of odd-paged duplex jobs. The added page will be incremented in the printer's counter. There is no way to prevent this.
-<li>A paper mismatch error occurs, if the paper size unit set in Custom Paper Size dialog is different to that set in "Custom Size" settings on the printer operation panel.
+<li>A paper mismatch error might occur when the measurement unit in the Custom Paper Size dialog is different from the "Custom Size" setting on the printer operation panel.
 </ul>
 <h2><a name="">[Printing Issues]</a></h2>
 <ul>
@@ -363,6 +399,7 @@ In such case, a change of font is recommended.
 <ul>
 <li>If the "Color/ Black and White" setting  is "Color" some purely BW objects might be printed using CMYK toners (composite black). If the "Color/ Black and White" setting = "Black and White", all objects will be printed using K toner (pure black) only.
 </ul>
+</p>
 
 
 

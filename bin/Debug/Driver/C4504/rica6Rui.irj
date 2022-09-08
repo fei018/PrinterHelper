@@ -1,0 +1,154 @@
+{
+
+	"common" :
+	{
+
+		"root" :
+		{
+                        "SoftwareID"				: [ "0000000627020202",		"REG_SZ" ],
+			"Logging"								: [ "1",					"REG_DWORD" ]
+		},
+
+		"common_scope" :
+		{
+			"DriverProductVersion"		: [ "1.7.0.0",		"REG_SZ" ],
+			"Date"				: [ "04/07/2021",	"REG_SZ" ],
+			"PrinterModelName"		: [ "MP C4504",	"REG_SZ" ],
+			"PDL"						: [ "PCLXL",				"REG_SZ" ]
+		},
+
+		"ui_scope" :
+		{
+		},
+
+		"gr_scope" :
+		{
+		},
+
+		"capsdb_scope" :
+		{
+		}
+
+	},
+
+       "Gestetner MP C4504 PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C4504", "REG_SZ" ]
+               }
+       },
+       "Gestetner DSc1245 PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "DSc1245", "REG_SZ" ]
+               }
+       },
+       "Gestetner MP C6004 PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C6004", "REG_SZ" ]
+               }
+       },
+       "Gestetner DSc1260 PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "DSc1260", "REG_SZ" ]
+               }
+       },
+"infotec MP C4504 PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C4504", "REG_SZ" ]
+               }
+       },
+       "infotec MP C5504 PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C5504", "REG_SZ" ]
+               }
+       },
+       "infotec MP C6004 PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C6004", "REG_SZ" ]
+               }
+       },
+"LANIER MP C4504 PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C4504", "REG_SZ" ]
+               }
+       },
+       "LANIER MP C6004 PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C6004", "REG_SZ" ]
+               }
+       },
+"NRG MP C4504 PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C4504", "REG_SZ" ]
+               }
+       },
+       "NRG MP C5504 PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C5504", "REG_SZ" ]
+               }
+       },
+       "NRG MP C6004 PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C6004", "REG_SZ" ]
+               }
+       },
+"RICOH MP C4504 PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C4504", "REG_SZ" ]
+               }
+       },
+       "RICOH MP C5504 PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C5504", "REG_SZ" ]
+               }
+       },
+       "RICOH MP C6004 PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C6004", "REG_SZ" ]
+               }
+       },
+"SAVIN MP C4504 PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C4504", "REG_SZ" ]
+               }
+       },
+       "SAVIN MP C6004 PCL 6" :
+       {
+               "common_scope" :
+               {
+                       "PrinterModelName"              : [ "MP C6004", "REG_SZ" ]
+               }
+       }
+ 
+}

@@ -70,35 +70,7 @@ namespace PrinterHelper
         {
             foreach (var info in configInfos)
             {
-                try
-                {
-                    if (PrinterExist(info.PrinterName))
-                    {
-                        throw new Exception($"Printer exists: {info.PrinterName}");
-                    }
-
-                    // add port
-                    AddOrUpdatePrinterTcpIPPort(info.IP);
-
-                    // install driver
-                    if (!PrinterDriverExist(info.PrinterModel))
-                    {
-                        InstallPrinterDriver_WMI(info.PrinterModel, info.DriverInfPath);
-                    }
-
-                    // install printer
-                    InstallPrinter_PS(info.PrinterName, info.PrinterModel, info.IP);
-
-                    // set config
-                    SetPrinterConfig_WMI(info.PrinterName);
-                    SetPrinterConfig_Printing(info.PrinterName);                   
-
-                    MsgEvent?.Invoke(null, $"Add Priner: {info.PrinterName}");
-                }
-                catch (Exception ex)
-                {
-                    ErrorEvent?.Invoke(null, ex.Message);
-                }
+                AddNewPrinter(info);
             }
         }
         #endregion
@@ -197,39 +169,8 @@ namespace PrinterHelper
         }
         #endregion
 
-        #region + private static void InstallPrinter_WMI(string printerName, string driverName, string portName)
-        private static void InstallPrinter_WMI(string printerName, string driverName, string portName)
-        {
-            try
-            {
-                using (ManagementClass printClass = new ManagementClass(@"\root\cimv2:Win32_Printer"))
-                using (ManagementObject printObject = printClass.CreateInstance())
-                {
-                    printObject["Name"] = printerName;
-                    printObject["DriverName"] = driverName;
-                    printObject["PortName"] = portName;
-                    printObject["DoCompleteFirst"] = true;
-
-                    PutOptions options = new PutOptions(null, TimeSpan.FromSeconds(30), false, PutType.CreateOnly);
-                    printObject.Put(options);
-
-                    printObject.Dispose();
-                }
-
-                if (!PrinterExist(printerName))
-                {
-                    throw new Exception("Install Printer Fail: " + printerName + "\r\n");
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-        #endregion
-
         #region + private static void InstallPrinter_WMI2(string printerName, string driverName, string portName)
-        private static void InstallPrinter_WMI2(string printerName, string driverName, string portName)
+        private static void InstallPrinter_WMI(string printerName, string driverName, string portName)
         {
             try
             {
@@ -489,7 +430,7 @@ namespace PrinterHelper
                 {
                     methodParams.SetPropertyValue("PrinterName", printerName);
                     methodParams.SetPropertyValue("Color", false);
-                    methodParams.SetPropertyValue("DuplexingMode", 0);                   
+                    methodParams.SetPropertyValue("DuplexingMode", 0);
 
                     //var invokeOption = new InvokeMethodOptions(null, TimeSpan.FromSeconds(30));
                     mc.InvokeMethod("SetByPrinterName", methodParams, null);

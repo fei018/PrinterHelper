@@ -29,7 +29,31 @@ namespace PrinterHelper
 
         //
 
-        #region + public void Delete2()
+        #region CancelAllJobs
+        public void CancelAllJobs()
+        {
+            try
+            {
+                ManagementScope mgmtscope = new ManagementScope(@"\root\cimv2");
+                var query = new ObjectQuery($"Select * from Win32_Printer Where Name='{Name}'");
+
+                using (var objsearcher = new ManagementObjectSearcher(mgmtscope, query))
+                using (var printers = objsearcher.Get())
+                {
+                    foreach (ManagementObject printer in printers)
+                    {
+                        printer.InvokeMethod("CancelAllJobs", null);
+                        printer.Dispose();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+        #endregion
+
+        #region + public void Delete()
         public void Delete()
         {
             try
@@ -50,21 +74,21 @@ namespace PrinterHelper
             }
             catch (Exception ex)
             {
-                throw new Exception($"Delete Printer {Name}\r\n{ex.GetBaseException().Message}");
+                throw new Exception($"Delete Printer {Name}, {ex.GetBaseException().Message}");
             }
         }
         #endregion
 
         #region + public void Delete()
-        public void Delete_PS()
+        public void Delete2()
         {
             try
             {
                 using (var ps = PowerShell.Create())
                 {
-                    ps.AddCommand("Remove-Printer")
-                         .AddParameter("ComputerName", Environment.MachineName)
-                         .AddParameter("Name", Name);
+                    CancelAllJobs();
+
+                    ps.AddCommand("Remove-Printer").AddParameter("Name", Name);
 
                     var result = ps.Invoke();
                 }
